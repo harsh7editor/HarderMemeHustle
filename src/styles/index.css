@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-neon-green: #00ff41;
+  --color-neon-pink: #ff00ff;
+}
+
+body {
+  background-color: black;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.glitch-text {
+  text-shadow: 
+    0 0 5px var(--color-neon-green),
+    0 0 10px var(--color-neon-green),
+    0 0 20px var(--color-neon-green);
+  animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 
+      0 0 5px var(--color-neon-green),
+      0 0 10px var(--color-neon-green);
+  }
+  50% {
+    text-shadow: 
+      -2px 0 var(--color-neon-pink),
+      2px 2px var(--color-neon-green);
+  }
+  100% {
+    text-shadow: 
+      0 0 5px var(--color-neon-green),
+      0 0 10px var(--color-neon-green);
+  }
+}
+
+.nav-link {
+  @apply flex items-center space-x-2 text-gray-400 hover:text-neon-green transition-colors;
+}
+
+.stat-card {
+  @apply flex items-center justify-center space-x-4 p-6 border border-neon-green rounded-lg hover:border-neon-pink transition-colors;
+}
